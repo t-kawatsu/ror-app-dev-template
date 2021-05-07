@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - 'LISENCE'
+    branches:
+      - 'master'
+      - 'develop'
+      - 'feature/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
+      # - 'release/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30 # consider something went wrong if over
+    strategy:
+      fail-fast: true
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: |
+        docker-compose build
+
+    - name: Set up
+      run: |
+        docker-compose run app /bin/setup
+
+    - name: Lint
+      run: |
+        docker-compose run app bundle exec rubocop
