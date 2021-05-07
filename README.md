@@ -42,6 +42,8 @@ DONE! ( you can access to 'http://localhost:3000/' )
 additional changes
 - add pry
 - localize ( Japanese )
+- change config/application.rb
+- add & configure rubocop
 
 
 ## Troubleshooting

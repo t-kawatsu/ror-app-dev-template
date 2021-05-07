@@ -1,0 +1,89 @@
+#inherit_from: .rubocop_todo.yml
+
+require: 
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'db/**/*'
+    - 'db/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - 'config/**/*'
+    - 'Gemfile'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
+    - 'spec/**/*'
+    - 'lib/tasks/**/*'
+
+Metrics/ClassLength:
+  # 他を参考にするとOFFにしても良さそうだがとりあえず
+  Max: 200
+
+Metrics/ModuleLength:
+  # 他を参考にするとOFFにしても良さそうだがとりあえず
+  Max: 200
+
+Metrics/MethodLength:
+  # 他を参考にするとOFFにしても良さそうだがとりあえず
+  Max: 40
+
+Metrics/AbcSize:
+  Max: 36
+
+Metrics/CyclomaticComplexity:
+  # 他を参考にするとOFFにしても良さそうだがとりあえず
+  Max: 10
+
+Bundler/OrderedGems:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/system/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/system/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/system/**/*'
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/RepeatedExample:
+  Exclude:
+    - 'spec/policies/**/*'
