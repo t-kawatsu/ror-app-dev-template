@@ -1,0 +1,72 @@
+version: "3.7"
+services:
+
+  web:
+    build: docker/web
+    ports:
+      # - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    networks:
+     - default
+
+  app:
+    build: docker/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/var/www/app
+      - ./vendor/bundle:/usr/local/bundle:cached
+    depends_on:
+      - mysql
+      - redis
+      - elasticsearch
+    networks:
+     - default
+    tty: true
+    stdin_open: true
+
+  mysql:
+    build: docker/mysql
+    ports:
+      - "3306:3306"
+    env_file: docker/mysql/.env
+    volumes:
+       - mysql_data:/var/lib/mysql
+    networks:
+     - default
+
+  redis:
+    build: docker/redis
+    ports:
+      - "6379:6379"
+    networks:
+     - default
+
+  elasticsearch:
+    build: docker/elasticsearch
+    environment:
+      - cluster.name=app
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - default
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+networks:
+  default:
+    # PC上で一意な名前
+    name: app-development
+    driver: bridge
+
+volumes:
+  mysql_data:
+  elasticsearch_data:
