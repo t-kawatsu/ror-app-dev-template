@@ -39,6 +39,10 @@ $ docker-compose run --rm --service-ports app /bin/bash
 DONE! ( you can access to 'http://localhost:3000/' )
 ```
 
+additional changes
+- add pry
+- localize ( Japanese )
+
 
 ## Troubleshooting
 
