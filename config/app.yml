@@ -1,0 +1,11 @@
+default: &default
+  copyright: © 2021 - Free Inc.
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

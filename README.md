@@ -1,4 +1,4 @@
-# docker-web-dev-template
+# ror-app-dev-template
 
 
 ## stack
@@ -12,16 +12,22 @@
 - Github Actions ( CI / CD tool )
 
 
-## Requirements
+## Development
+
+### Requirements
 
 - Docker
 
-You need a runtime that installed docker machine for building.
+You need a runtime that installed docker for building.
 
+### set up
 
-## Development
-
-docs/docker.md 参照
+```
+$ docker-compose build
+$ cp .env.development .env.development.local # for override env variables
+$ docker-compose run --rm app bin/setup
+$ docker-compose up
+```
 
 
 ## Logs
@@ -40,11 +46,18 @@ DONE! ( you can access to 'http://localhost:3000/' )
 ```
 
 additional changes
-- add pry
+- pry / .env / rubocop ( configured )
 - localize ( Japanese )
-- change config/application.rb
-- add & configure rubocop
+- config/application.rb
 - splitable route files
+- some controllers
+
+
+## TODO
+
+- Docker for Mac だと filesync が遅い為かrailsへのhttpアクセスが重すぎる
+    - ここらへんを使うか https://qiita.com/pocari/items/0340049742927f3a94b7
+    - 他の方法で解決
 
 
 ## Troubleshooting

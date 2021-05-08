@@ -5,6 +5,6 @@ namespace :api, path: :api, format: 'json' do
 
     resource :health, only: [:show]
 
-    get '*path', controller: 'errors', action: 'not_found'
+    get '*unmatched_route', controller: 'errors', action: 'not_found'
   end
 end

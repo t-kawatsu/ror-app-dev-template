@@ -34,6 +34,8 @@ group :development, :test do
   gem 'rubocop', '~> 1.14', require: false
   gem 'rubocop-rspec', '~> 2.3.0', require: false
   gem 'rubocop-rails', require: false
+
+  gem 'dotenv-rails', '>= 2.7.6'
 end
 
 group :development do
