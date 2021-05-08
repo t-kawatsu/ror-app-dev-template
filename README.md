@@ -46,11 +46,19 @@ DONE! ( you can access to 'http://localhost:3000/' )
 ```
 
 additional changes
-- pry / .env / rubocop ( configured )
+- gems
+    - pry
+    - dotenv
+    - rubocop ( configured ) 
+    - brakeman
+    - rspec
+    - factory_bot
+    - data_migrate 
 - localize ( Japanese )
 - config/application.rb
 - splitable route files
 - some controllers
+- add migration script ( bin/migrate )
 
 
 ## TODO
