@@ -17,7 +17,7 @@ module Api
         render json: {
           data: data,
           meta: meta
-        }, status: status
+        }, status: status, content_type: 'application/vnd.api+json'
       end
     end
   end
