@@ -44,11 +44,9 @@ additional changes
 - localize ( Japanese )
 - change config/application.rb
 - add & configure rubocop
+- splitable route files
 
 
 ## Troubleshooting
 
 
-## TODO/FIXME
-
-railsが入っていない

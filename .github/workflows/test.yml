@@ -30,7 +30,7 @@ jobs:
 
     - name: Set up
       run: |
-        docker-compose run app /bin/setup
+        docker-compose run app bin/setup
 
     - name: Lint
       run: |
