@@ -39,6 +39,8 @@ group :development, :test do
 
   gem 'brakeman', require: false
 
+  gem 'danger', '>= 8.2.0', require: false
+
   gem 'dotenv-rails', '>= 2.7.6'
 end
 

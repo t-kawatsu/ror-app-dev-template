@@ -53,7 +53,8 @@ additional changes
     - brakeman
     - rspec
     - factory_bot
-    - data_migrate 
+    - data_migrate
+    - danger
 - localize ( Japanese )
 - config/application.rb
 - splitable route files
