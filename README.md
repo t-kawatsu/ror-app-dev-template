@@ -1,5 +1,9 @@
 # ror-app-dev-template
 
+![Build Status](https://github.com/t-kawatsu/ror-app-dev-template/actions/workflows/test.yml/badge.svg)
+
+This is the template repository for Ruby on Rails web-api applications that are constructed with Docker.
+
 
 ## stack
 
