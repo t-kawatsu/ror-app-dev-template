@@ -35,3 +35,7 @@ jobs:
     - name: Lint
       run: |
         docker-compose run app bundle exec rubocop
+
+    - name: Test
+      run: |
+        docker-compose run app bundle exec rspec

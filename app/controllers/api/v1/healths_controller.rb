@@ -5,12 +5,12 @@ module Api
         ActiveRecord::Base.connection.execute('SELECT 1')
 
         render_data({
-          type: :healths,
-          id: 1,
-          attributes: {
-            status: :fine
-          }
-        })
+                      type: :healths,
+                      id: 1,
+                      attributes: {
+                        status: :fine
+                      }
+                    })
       end
     end
   end
