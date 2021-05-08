@@ -38,4 +38,5 @@ jobs:
 
     - name: Test
       run: |
+        docker-compose run app bundle exec brakeman --only-files app,lib,config
         docker-compose run app bundle exec rspec
